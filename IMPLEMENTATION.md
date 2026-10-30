@@ -1,6 +1,6 @@
 # OM Food and Spices LLP
 
-Forest green, ivory and copper industrial ingredient website, with a protected content workspace.
+Midnight blue, warm ivory and champagne gold industrial ingredient website, with a protected content workspace.
 
 ## Existing integrations
 
