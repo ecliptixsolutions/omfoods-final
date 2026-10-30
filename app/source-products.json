@@ -1,0 +1,178 @@
+[
+  {
+    "slug": "dehydrated-onion-flakes-kibbled-onion",
+    "name": "Dehydrated onion flakes / kibbled onion",
+    "description": "Dehydrated onion formats for ingredient and food business inquiries.",
+    "image": "/images/dehydrated-onion-flakes-kibbled-onion.webp",
+    "family": "Onion",
+    "form": "Flakes / Kibbled",
+    "published": true,
+    "code": "",
+    "sizes": "",
+    "origin": "",
+    "shelfLife": "",
+    "packaging": "",
+    "specifications": [],
+    "treatments": [],
+    "applications": [
+      "Seasoning blends",
+      "Sauces & condiments",
+      "Food manufacturing"
+    ],
+    "source": "https://om-food-five.vercel.app/products/dehydrated-onion-flakes-kibbled-onion"
+  },
+  {
+    "slug": "minced-onion",
+    "name": "Minced onion",
+    "description": "Discuss minced onion format, requirements and current availability.",
+    "image": "/images/minced-onion.webp",
+    "family": "Onion",
+    "form": "Minced",
+    "published": true,
+    "code": "",
+    "sizes": "",
+    "origin": "",
+    "shelfLife": "",
+    "packaging": "",
+    "specifications": [],
+    "treatments": [],
+    "applications": [
+      "Seasoning blends",
+      "Sauces & condiments",
+      "Food manufacturing"
+    ],
+    "source": "https://om-food-five.vercel.app/products/minced-onion"
+  },
+  {
+    "slug": "onion-granules",
+    "name": "Onion granules",
+    "description": "Enquire about granules and the specifications your business needs.",
+    "image": "/images/onion-granules.webp",
+    "family": "Onion",
+    "form": "Granules",
+    "published": true,
+    "code": "",
+    "sizes": "",
+    "origin": "",
+    "shelfLife": "",
+    "packaging": "",
+    "specifications": [],
+    "treatments": [],
+    "applications": [
+      "Seasoning blends",
+      "Sauces & condiments",
+      "Food manufacturing"
+    ],
+    "source": "https://om-food-five.vercel.app/products/onion-granules"
+  },
+  {
+    "slug": "onion-powder",
+    "name": "Onion powder",
+    "description": "Share your powder requirements for an availability discussion.",
+    "image": "/images/onion-powder.webp",
+    "family": "Onion",
+    "form": "Powder",
+    "published": true,
+    "code": "",
+    "sizes": "",
+    "origin": "",
+    "shelfLife": "",
+    "packaging": "",
+    "specifications": [],
+    "treatments": [],
+    "applications": [
+      "Seasoning blends",
+      "Sauces & condiments",
+      "Food manufacturing"
+    ],
+    "source": "https://om-food-five.vercel.app/products/onion-powder"
+  },
+  {
+    "slug": "dehydrated-garlic-flakes",
+    "name": "Dehydrated garlic flakes",
+    "description": "Dried garlic flakes for seasoning blends, food manufacturing and commercial ingredient applications.",
+    "image": "/images/dehydrated-garlic-flakes.jpg",
+    "family": "Garlic",
+    "form": "Flakes / Kibbled",
+    "published": true,
+    "code": "",
+    "sizes": "",
+    "origin": "",
+    "shelfLife": "",
+    "packaging": "",
+    "specifications": [],
+    "treatments": [],
+    "applications": [
+      "Seasoning blends",
+      "Sauces & condiments",
+      "Food manufacturing"
+    ],
+    "source": "https://om-food-five.vercel.app/products/dehydrated-garlic-flakes"
+  },
+  {
+    "slug": "dehydrated-minced-garlic",
+    "name": "Dehydrated minced garlic",
+    "description": "Minced dried garlic for seasoning, sauces and food processing requirements.",
+    "image": "/images/dehydrated-minced-garlic.jpg",
+    "family": "Garlic",
+    "form": "Minced",
+    "published": true,
+    "code": "",
+    "sizes": "",
+    "origin": "",
+    "shelfLife": "",
+    "packaging": "",
+    "specifications": [],
+    "treatments": [],
+    "applications": [
+      "Seasoning blends",
+      "Sauces & condiments",
+      "Food manufacturing"
+    ],
+    "source": "https://om-food-five.vercel.app/products/dehydrated-minced-garlic"
+  },
+  {
+    "slug": "dehydrated-garlic-granules",
+    "name": "Dehydrated garlic granules",
+    "description": "Garlic granules for commercial seasoning, ingredient blending and food production inquiries.",
+    "image": "/images/dehydrated-garlic-granules.jpg",
+    "family": "Garlic",
+    "form": "Granules",
+    "published": true,
+    "code": "",
+    "sizes": "",
+    "origin": "",
+    "shelfLife": "",
+    "packaging": "",
+    "specifications": [],
+    "treatments": [],
+    "applications": [
+      "Seasoning blends",
+      "Sauces & condiments",
+      "Food manufacturing"
+    ],
+    "source": "https://om-food-five.vercel.app/products/dehydrated-garlic-granules"
+  },
+  {
+    "slug": "dehydrated-garlic-powder",
+    "name": "Dehydrated garlic powder",
+    "description": "Fine garlic powder for seasoning blends, sauces and commercial food applications.",
+    "image": "/images/dehydrated-garlic-powder.jpg",
+    "family": "Garlic",
+    "form": "Powder",
+    "published": true,
+    "code": "",
+    "sizes": "",
+    "origin": "",
+    "shelfLife": "",
+    "packaging": "",
+    "specifications": [],
+    "treatments": [],
+    "applications": [
+      "Seasoning blends",
+      "Sauces & condiments",
+      "Food manufacturing"
+    ],
+    "source": "https://om-food-five.vercel.app/products/dehydrated-garlic-powder"
+  }
+]
