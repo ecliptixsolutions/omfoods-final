@@ -2,39 +2,58 @@
 
 Industrial onion and garlic website with an integrated admin panel at `/admin`.
 
-## Current live website
+## Vercel deployment
 
-https://om-food-spices-industrial.workspace-204339.chatgpt.site/
+The app is configured for the `omfoods-final` project in the `ecliptix-solutions-projects` Vercel team and connected to https://github.com/ecliptixsolutions/omfoods-final.
 
-The review deployment is private and requires ChatGPT sign-in. This GitHub repository contains the source code, not the live database, uploaded documents, credentials or customer records.
+- Next.js serves the website and API routes on one domain.
+- A private Vercel Blob store holds content, role records, manual sales leads, audit history and uploaded files.
+- Conditional writes prevent concurrent updates from silently overwriting each other. Content revisions reject stale saves. Reads bypass the Blob CDN cache.
+- Admins sign in with email and password. Passwords are salted and scrypt-hashed; signed HTTP-only cookies expire after eight hours. Role checks run server-side. Logout, password changes and role changes invalidate sessions.
+- There is no public account-registration or first-admin bootstrap endpoint. The owner is provisioned from server-only environment variables.
 
-## Features
+## Required environment variables
 
-- Responsive midnight blue, ivory and gold design with Manrope and Source Sans 3 typography.
-- Product catalogue, application pages, product details, quality and document pages.
-- Products, pages, process stages and document approval controls in the admin panel.
-- Role-based admin access and a manual sales CRM.
-- One existing enquiry form for samples and quotations, retaining the original WhatsApp integration.
+| Variable | Purpose |
+| --- | --- |
+| `BLOB_READ_WRITE_TOKEN` | Private Vercel Blob store access; set by the Vercel storage integration |
+| `ADMIN_OWNER_EMAIL` | Initial administrator email |
+| `ADMIN_PASSWORD_HASH` | Initial scrypt hash, in salt:hash format |
+| `SESSION_SECRET` | Random server-only signing key of at least 32 characters |
+| `NEXT_PUBLIC_SITE_URL` | Optional canonical URL override; otherwise uses Vercel's production domain |
+| `STORAGE_NAMESPACE` | Optional isolated development namespace; leave unset in production |
 
-## Run locally
+Initial credentials are saved locally in ignored `outputs/vercel-admin-access.txt`. They are never committed. Change the initial password through Admin → Settings. Team accounts get a temporary password displayed once to the administrator; share it securely. Role revocation is immediate.
+
+Never publish `.env.local`, `.vercel`, storage records or the access file. The application ignores old Sites identity headers.
+
+## Local development
 
 Requires Node.js 22.13 or newer.
 
 ```sh
-npm run install:ci
-npm run build
-node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0000_fuzzy_logan.sql
-npm run dev -- --port 5173 --hostname 127.0.0.1
+npm ci
+# Configure the server-only variables in .env.local.
+# Set STORAGE_NAMESPACE=development/ to isolate local tests from production data.
+npm run dev -- --port 3000 --hostname 127.0.0.1
 ```
 
-Apply the initial migration once to a new local database. Local preview uses the starter's loopback-only mock sign-in. Production authentication is provided by Sites.
+```sh
+npx tsc --noEmit
+npm run build
+node scripts/check-site.mjs
+```
 
-## Hosting and Vercel status
+The integration check runs against localhost only and reads the initial access file. It checks authentication, CSRF, storage persistence, stale-save rejection, draft privacy, file access, team roles and logout. QA files stay under the development storage namespace. It restores website content afterward.
 
-This version uses Vinext and Cloudflare Workers, with D1 for database records, R2 for uploaded files and Sites-managed authentication. It is **not yet a Vercel-compatible deployment**. Importing this repository into Vercel without migrating these services will not produce a working full application.
+## Existing enquiry and WhatsApp
 
-A Vercel migration must replace the runtime/database/file bindings and admin identity provider, update build configuration, configure production secrets securely, and migrate any required live content. Do not trust incoming `oai-authenticated-user-*` headers outside the Sites deployment boundary. Do not enable the first-admin bootstrap on a public Vercel deployment.
+The original enquiry service remains at https://om-food-five.vercel.app/contact. Get Sample and Get Quotation use that same unchanged form. Its submissions do not automatically sync into the manual CRM. The existing verified WhatsApp number and message are preserved.
 
-The existing enquiry form runs at https://om-food-five.vercel.app/contact and remains unchanged. Its submissions do not automatically sync into the new manual CRM.
+## Content approvals and limits
 
-See [IMPLEMENTATION.md](IMPLEMENTATION.md) for content approval status, checks and remaining integrations. Do not commit `.env` files, `.dev.vars`, database files or upload storage.
+Eight source products are public; 20 family/form records and 18 process stages remain drafts pending verification. No certificates, capacities, treatment claims or technical limits are invented. Private, pending, withdrawn and expired PDFs cannot be downloaded publicly. Image/PDF uploads are capped at 3 MB to fit Vercel request limits; file signatures are checked, but malware scanning is not enabled.
+
+The compact private JSON datastore is intended for this small content/sales workspace, not high-volume transaction processing. Audit history retains the latest 2,000 content-save events. For substantially larger teams or workloads, migrate records to a transactional database.
+
+The earlier Sites deployment remains separate and unchanged. Its database/uploads are not automatically copied into Vercel. This deployment starts from the source catalogue and content. Historical Sites runtime helpers remain in source for reference; production uses `next build` and the `vercel.json` configuration.

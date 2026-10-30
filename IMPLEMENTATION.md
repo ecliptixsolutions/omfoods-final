@@ -1,3 +1,5 @@
+> Vercel migration completed: see README.md for the current runtime, storage, login and upload limit. The notes below describe the earlier Sites review implementation and its original requirements. The existing Sites deployment remains unchanged.
+
 # OM Food and Spices LLP
 
 Midnight blue, warm ivory and champagne gold industrial ingredient website, with a protected content workspace.

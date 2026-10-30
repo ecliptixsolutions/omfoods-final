@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import {siteUrl} from './site-url';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://om-food-spices-industrial.workspace-204339.chatgpt.site'),
+  metadataBase: new URL(siteUrl),
   title: {default:"OM Food and Spices LLP | Onion & Garlic Ingredients",template:"%s | OM Food and Spices LLP"},
   description: "Dehydrated onion and garlic ingredients for food manufacturers and bulk buyers. Explore products, applications and enquiries with OM Food and Spices LLP, Gujarat, India.",
   icons: {
